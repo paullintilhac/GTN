@@ -41,7 +41,7 @@ draw_key = 1  # 大于等于draw_key才会保存图像
 file_name = path.split('\\')[-1][0:path.split('\\')[-1].index('.')]  # 获得文件名字
 
 # 超参数设置
-EPOCH = 100
+EPOCH = 1
 BATCH_SIZE = 3
 LR = 1e-4
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")  # 选择设备 CPU or GPU
@@ -142,12 +142,12 @@ def train():
 
             if current_accuracy > max_accuracy:
                 max_accuracy = current_accuracy
-                torch.save(net, f'saved_model/{file_name} batch={BATCH_SIZE}.pkl')
+                torch.save(net, f'{file_name} batch={BATCH_SIZE}.pkl')
 
         pbar.update()
 
-    os.rename(f'saved_model/{file_name} batch={BATCH_SIZE}.pkl',
-              f'saved_model/{file_name} {max_accuracy} batch={BATCH_SIZE}.pkl')
+    os.rename(f'{file_name} batch={BATCH_SIZE}.pkl',
+              f'saved{file_name} {max_accuracy} batch={BATCH_SIZE}.pkl')
 
     end = time()
     time_cost = round((end - begin) / 60, 2)

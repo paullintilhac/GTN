@@ -30,7 +30,7 @@ DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Wafer length=803  input=997 channel=4
 
 # 选择要跑的模型
-save_model_path = 'saved_model/ECG 91.0 batch=2.pkl'
+save_model_path = 'ECG 91.0 batch=2.pkl'
 file_name = save_model_path.split('/')[-1].split(' ')[0]
 path = f'E:\PyCharmWorkSpace\\dataset\\MTS_dataset\\{file_name}\\{file_name}.mat'  # 拼装数据集路径
 
