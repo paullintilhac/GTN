@@ -141,13 +141,14 @@ def train():
             print(f'当前最大准确率\t测试集:{max(correct_on_test)}%\t 训练集:{max(correct_on_train)}%')
 
             if current_accuracy > max_accuracy:
+                print("saving new model: " + str( f'{file_name}  {BATCH_SIZE}.pkl'))
                 max_accuracy = current_accuracy
-                torch.save(net, f'{file_name} batch={BATCH_SIZE}.pkl')
+                torch.save(net, f'{file_name}  {BATCH_SIZE}.pkl')
 
         pbar.update()
 
-    os.rename(f'{file_name} batch={BATCH_SIZE}.pkl',
-              f'saved{file_name} {max_accuracy} batch={BATCH_SIZE}.pkl')
+    os.rename(f'{file_name}  {BATCH_SIZE}.pkl',
+              f'saved{file_name} {max_accuracy}  {BATCH_SIZE}.pkl')
 
     end = time()
     time_cost = round((end - begin) / 60, 2)
