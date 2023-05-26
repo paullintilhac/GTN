@@ -144,6 +144,7 @@ def train():
                 print("saving new model: " + str( f'{file_name}  {BATCH_SIZE}.pkl'))
                 max_accuracy = current_accuracy
                 torch.save(net, f'{file_name}  {BATCH_SIZE}.pkl')
+                print("successfully saved model")
 
         pbar.update()
 
