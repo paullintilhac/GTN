@@ -139,7 +139,7 @@ def train():
             current_accuracy = test(test_dataloader)
             test(train_dataloader, 'train_set')
             print(f'当前最大准确率\t测试集:{max(correct_on_test)}%\t 训练集:{max(correct_on_train)}%')
-
+            print("current accuracy: " + str(current_accuracy) + ", max accuracy: " + str(max_accuracy))
             if current_accuracy > max_accuracy:
                 print("saving new model: " + str( f'{file_name}  {BATCH_SIZE}.pkl'))
                 max_accuracy = current_accuracy
