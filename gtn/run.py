@@ -39,7 +39,7 @@ path = sys.argv[1]
 test_interval = 1  # 测试间隔 单位：epoch
 draw_key = 1  # 大于等于draw_key才会保存图像
 file_name = path.split('\\')[-1][0:path.split('\\')[-1].index('.')]  # 获得文件名字
-
+print("file name: " + str(file_name))
 # 超参数设置
 EPOCH = 1
 BATCH_SIZE = 3
