@@ -36,7 +36,7 @@ reslut_figure_path = 'result_figure'  # 结果图像保存路径
 # path = 'E:\PyCharmWorkSpace\\dataset\\MTS_dataset\\Wafer\\Wafer.mat'
 path = sys.argv[1]
 
-test_interval = 5  # 测试间隔 单位：epoch
+test_interval = 1  # 测试间隔 单位：epoch
 draw_key = 1  # 大于等于draw_key才会保存图像
 file_name = path.split('\\')[-1][0:path.split('\\')[-1].index('.')]  # 获得文件名字
 
